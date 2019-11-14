@@ -1,0 +1,54 @@
+.phone-dropdown {
+  @extend %reset-list;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 5px;
+  }
+
+  &__list {
+    background: $primary_color_2;
+    box-shadow: $shadow;
+    padding: 10px 5px;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 50;
+    display: none;
+
+    & .phone-dropdown__item {
+      justify-content: center;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    letter-spacing: 0.05em;
+  }
+
+  &__button {
+    background: url("assets/img/svg/arrow-down.svg") no-repeat;
+    border: none;
+    outline: none;
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: all 0.2s;
+
+    &.active {
+      transition: all 0.2s;
+      transform: rotate(-180deg);
+    }
+  }
+
+  &--main {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}

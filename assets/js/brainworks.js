@@ -234,4 +234,18 @@
             });
         });
     };
+    (function() {
+        var dropDownBtn = $(".js-dropdown");
+        var dropDownList = $(".js-phone-list");
+        dropDownBtn.on("click", function() {
+            $(this).toggleClass("active");
+            $(this).siblings(".js-phone-list").fadeToggle(300);
+        });
+        $(document).mouseup(function(e) {
+            if (!dropDownList.is(e.target) && dropDownList.has(e.target).length === 0) {
+                dropDownList.fadeOut(300);
+                dropDownBtn.removeClass("active");
+            }
+        });
+    })();
 })(window, document, jQuery, window.jpAjax);

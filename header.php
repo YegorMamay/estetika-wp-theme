@@ -42,74 +42,106 @@
 <?php wp_body_open(); ?>
 <div class="wrapper js-container"><!--Do not delete!-->
 
-    <header class="page-header fixed-to-top">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
-                    <?php
-                        $address = get_theme_mod('bw_additional_address');
-                        if (!empty($address)) { ?>
-                        <span>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <?php echo esc_html($address); ?>
-                        </span>
-                    <?php } ?>
+    <header class="page-header">
 
-                    <?php
-                        $work_schedule = get_theme_mod('bw_additional_work_schedule');
-                        if (!empty($work_schedule )) { ?>
-                        <?php echo $work_schedule ; ?>
-                    <?php } ?>
+            <div class="container">
+                <div class="row page-header__wrapper">
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                        <div class="page-header__item-wrapper">
+                            <?php
+                            $address = get_theme_mod('bw_additional_address');
+                            if (!empty($address)) { ?>
+                                <div class="page-header__item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span class="page-header__description"><?php echo esc_html($address); ?></span>
+                                </div>
+                            <?php } ?>
 
-                    <?php if (function_exists('pll_the_languages')) { ?>
-                        <ul class="lang">
-                            <?php pll_the_languages(array(
-                            'show_flags' => 0,
-                            'show_names' => 1,
-                            'hide_if_empty' => 0,
-                            'display_names_as' => 'name'
-                            )); ?>
-                        </ul>
-                    <?php } ?>
+                            <?php
+                            $work_schedule = get_theme_mod('bw_additional_work_schedule');
+                            if (!empty($work_schedule )) { ?>
+                                <div class="page-header__item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span class="page-header__description"><?php echo $work_schedule ; ?></span>
+                                </div>
+                            <?php } ?>
 
-
-
-                </div>
-                <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
-                    <div class="logo">
-	                    <?php get_default_logo_link([
-                            'name'    => 'logo.svg',
-                            'options' => [
-                                'class'  => 'logo-img',
-                                'width'  => 200,
-                                'height' => 80,
+                            <?php if (function_exists('pll_the_languages')) { ?>
+                                <ul class="lang">
+                                    <?php pll_the_languages(array(
+                                        'show_flags' => 0,
+                                        'show_names' => 1,
+                                        'hide_if_empty' => 0,
+                                        'display_names_as' => 'name'
+                                    )); ?>
+                                </ul>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+                        <div class="logo">
+                            <?php get_default_logo_link([
+                                'name'    => 'logo.svg',
+                                'options' => [
+                                    'class'  => 'logo-img',
+                                    'width'  => 200,
+                                    'height' => 80,
                                 ],
                             ])
-                        ?>
+                            ?>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-7 col-lg-5 col-xl-5">
-                   <?php echo do_shortcode('[bw-social]'); ?>
-
-                   <?php echo do_shortcode('[bw-phone]'); ?>
-
-                    <div class="<?php the_lang_class('js-call-back'); ?>">
-                        <?php _e('Call back', 'brainworks'); ?>
+                    <div class="col-12 col-sm-12 col-md-7 col-lg-5 col-xl-5">
+                        <div class="page-header__item-wrapper page-header--flex-end">
+                            <?php echo do_shortcode('[bw-social]'); ?>
+                            <div class="phone-container">
+                                <!-- Dropdown phones -->
+                                <?php if (has_phones()) { ?>
+                                    <ul class="phone-dropdown">
+                                        <li class="phone-dropdown__item">
+                                            <?php foreach(get_phones() as $key => $phone) { ?>
+                                            <?php reset(get_phones()); ?>
+                                            <?php if ($key === key(get_phones())) { ?>
+                                            <a href="tel:<?php echo esc_attr(get_phone_number($phone)); ?>" class="phone-dropdown__link phone-dropdown--main">
+                                                <?php echo esc_html($phone); ?>
+                                            </a>
+                                            <button type="button" class="phone-dropdown__button js-dropdown"></button>
+                                            <ul class="phone-dropdown__list js-phone-list">
+                                                <?php  } else { ?>
+                                                    <li class="phone-dropdown__item">
+                                                        <a href="tel:<?php echo esc_attr(get_phone_number($phone)); ?>" class="phone-dropdown__link">
+                                                            <?php echo esc_html($phone); ?>
+                                                        </a>
+                                                    </li>
+                                                <?php } ?>
+                                                <?php } ?>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                <?php } ?>
+                                <!-- Dropdown phones -->
+                                <button type="button" class="button-request <?php the_lang_class('js-call-back'); ?>">
+                                    <?php _e('Обратный звонок', 'brainworks'); ?>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
                     <?php if (has_nav_menu('main-nav')) { ?>
                         <nav class="nav js-menu">
-                            <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
-                            <?php wp_nav_menu(array(
-                            'theme_location' => 'main-nav',
-                            'container' => false,
-                            'menu_class' => 'menu-container',
-                            'menu_id' => '',
-                            'fallback_cb' => 'wp_page_menu',
-                            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                            'depth' => 3
-                            )); ?>
+                            <div class="container">
+                                <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
+                                <?php wp_nav_menu(array(
+                                'theme_location' => 'main-nav',
+                                'container' => false,
+                                'menu_class' => 'menu-container',
+                                'menu_id' => '',
+                                'fallback_cb' => 'wp_page_menu',
+                                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                'depth' => 3
+                                )); ?>
+                            </div>
                         </nav>
                     <?php } ?>
     </header>

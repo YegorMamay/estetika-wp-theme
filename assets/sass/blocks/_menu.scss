@@ -2,7 +2,13 @@
     display: block;
     position: relative;
     text-align: center;
-    background: $menuBgColor;
+    background: $nav_bg_color;
+
+    & .menu-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     .menu {
         &,
@@ -14,14 +20,12 @@
         &-item {
             display: inline-block;
             vertical-align: middle;
-            padding: 5px;
+            padding: 5px 5px 0 5px;
+            border-bottom: 4px solid transparent;
 
             &:hover {
-                background: $menuBgColorActive;
+                border-color: $menuBgColorActive;
 
-                a {
-                    color: $menuFontColorActive;
-                }
             }
 
             .menu-item-has-children-arrow {
@@ -80,16 +84,16 @@
                 &::after {
                     content: "";
                     position: absolute;
-                    top: 21px;
-                    right: 8px;
-                    border: 5px solid $menuFontColor;
-                    border-color: $menuFontColor transparent transparent transparent;
+                    top: 15px;
+                    right: 2px;
+                    background: url("assets/img/svg/arrow-down.svg") no-repeat;
+                    width: 18px;
+                    height: 18px;
                 }
             }
 
             &-current {
-                border-bottom: 5px solid $menuBgColorActive;
-                padding-bottom: 0;
+                border-bottom: 4px solid $menuBgColorActive;
             }
 
             .no-touch &:hover,
@@ -182,7 +186,7 @@
         &-link {
             display: block;
             padding: 9px 15px;
-            color: $menuFontColor;
+            color: $primary_color_1;
             font-size: 14px;
             line-height: 1.3;
             text-decoration: none;
