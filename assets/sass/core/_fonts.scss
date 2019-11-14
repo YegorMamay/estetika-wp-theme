@@ -1,9 +1,23 @@
-//@import url('https://fonts.googleapis.com/css?family=Comfortaa|Lobster&subset=cyrillic');
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: url("assets/fonts/Gilroy-Bold.ttf")
+}
 
-//font-family: 'Roboto', sans-serif;
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: url("assets/fonts/Gilroy-Medium.ttf")
+}
+
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: url("assets/fonts/Gilroy-Regular.ttf")
+}
+
+
 $font-family-sans-serif: 'Arial', 'Helvetica', sans-serif;
 $font-family-serif: 'Georgia', 'Times New Roman', 'Times', serif;
 $font-family-monospace: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
 
-$fontFamilyOne: $font-family-sans-serif; // titles
-$fontFamilyTwo: $font-family-sans-serif; // body
+$fontFamilyOne: "Gilroy-Bold"; // titles
+$fontFamilyTwo: "Gilroy-Regular"; // body
+$fontFamilyThree: "Gilroy-Medium";
