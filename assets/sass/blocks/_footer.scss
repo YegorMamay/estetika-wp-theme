@@ -8,7 +8,8 @@
 
 .pre-footer {
     padding: 20px 0;
-    background-color: lighten($footerBgColor, 15%);
+    //background-color: lighten($footerBgColor, 15%);
+    background-image: url(/wp-content/themes/estetika-wp-theme/assets/img/footer-bg.jpg);
 }
 
 .copyright {

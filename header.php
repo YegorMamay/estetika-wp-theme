@@ -45,20 +45,59 @@
     <header class="page-header fixed-to-top">
         <div class="container">
             <div class="row align-items-center">
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                    <?php
+                        $address = get_theme_mod('bw_additional_address');
+                        if (!empty($address)) { ?>
+                        <span>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <?php echo esc_html($address); ?>
+                        </span>
+                    <?php } ?>
+
+                    <?php
+                        $work_schedule = get_theme_mod('bw_additional_work_schedule');
+                        if (!empty($work_schedule )) { ?>
+                        <?php echo $work_schedule ; ?>
+                    <?php } ?>
+
+                    <?php if (function_exists('pll_the_languages')) { ?>
+                        <ul class="lang">
+                            <?php pll_the_languages(array(
+                            'show_flags' => 0,
+                            'show_names' => 1,
+                            'hide_if_empty' => 0,
+                            'display_names_as' => 'name'
+                            )); ?>
+                        </ul>
+                    <?php } ?>
+
+
+
+                </div>
                 <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
                     <div class="logo">
 	                    <?php get_default_logo_link([
                             'name'    => 'logo.svg',
                             'options' => [
                                 'class'  => 'logo-img',
-                                'width'  => 100,
-                                'height' => 50,
+                                'width'  => 200,
+                                'height' => 80,
                                 ],
                             ])
                         ?>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+                <div class="col-12 col-sm-12 col-md-7 col-lg-5 col-xl-5">
+                   <?php echo do_shortcode('[bw-social]'); ?>
+
+                   <?php echo do_shortcode('[bw-phone]'); ?>
+
+                    <div class="<?php the_lang_class('js-call-back'); ?>">
+                        <?php _e('Call back', 'brainworks'); ?>
+                    </div>
+                </div>
+            </div>
                     <?php if (has_nav_menu('main-nav')) { ?>
                         <nav class="nav js-menu">
                             <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
@@ -73,14 +112,6 @@
                             )); ?>
                         </nav>
                     <?php } ?>
-                </div>
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                    <button type="button" class="btn btn-secondary btn-block <?php the_lang_class('js-call-back'); ?>">
-                        <?php _e('Call back', 'brainworks'); ?>
-                    </button>
-                </div>
-            </div>
-        </div>
     </header>
 
     <!-- Mobile menu start-->
@@ -107,3 +138,4 @@
         </nav>
     <?php } ?>
     <!-- Mobile menu end-->
+
