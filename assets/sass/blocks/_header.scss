@@ -4,6 +4,14 @@
   color: $headerFontColor;
   //box-shadow: $shadow;
   margin-bottom: 15px;
+  &.active {
+    background-color: $primary_color_2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
 
   &__item {
     color: $primary_color_1;

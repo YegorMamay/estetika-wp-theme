@@ -5,6 +5,10 @@
     display: inline-block;
     vertical-align: middle;
   }
+  &--mobile {
+    width: 100px;
+    height: 44px;
+  }
 }
 
 .phone {
@@ -40,17 +44,22 @@
   }
 
   &-item {
-    margin: 0 5px;
+    margin: 0 3px;
   }
 
   &-link {
-    display: block;
-    text-align: center;
+    background: $button_bg_color;
+    color: $primary_color_2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    color: $iconColor;
-
+    width: 30px;
+    height: 30px;
+    border-radius: $border_round;
     &:hover {
-      color: $iconColorActive;
+      background: $button_bg_hover;
+      color: $primary_color_2;
     }
   }
 }

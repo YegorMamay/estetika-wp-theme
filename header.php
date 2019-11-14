@@ -41,9 +41,7 @@
 
 <?php wp_body_open(); ?>
 <div class="wrapper js-container"><!--Do not delete!-->
-
-    <header class="page-header">
-
+    <header class="page-header hide-on-mobile js-menu-fixed">
             <div class="container">
                 <div class="row page-header__wrapper">
                     <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
@@ -153,7 +151,17 @@
             <span class="hamburger-inner"></span>
         </span>
         </button>
-        <div class="logo"><?php get_default_logo_link(); ?></div>
+        <div class="logo">
+            <?php get_default_logo_link([
+                'name'    => 'logo_mob.svg',
+                'options' => [
+                    'class'  => 'logo--mobile',
+                    'width'  => 200,
+                    'height' => 80,
+                ],
+            ])
+            ?>
+        </div>
     </div>
     <?php if (has_nav_menu('main-nav')) { ?>
         <nav class="nav js-menu hide-on-desktop">
@@ -167,6 +175,9 @@
             'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
             'depth' => 3
         )); ?>
+            <div class="mobile-item">
+                <?php echo do_shortcode('[bw-phone]'); ?>
+            </div>
         </nav>
     <?php } ?>
     <!-- Mobile menu end-->

@@ -42,6 +42,22 @@
             dropDownBtn.removeClass('active');
         });
     })(jQuery);
+
+    (function ($) {
+        $(document).scroll(function () {
+
+            var headerMenu = $('.js-menu-fixed'),
+                windowHeight = $(window).height() / 2;
+
+            if ($(this).scrollTop() > windowHeight && $(window).width() >= 1025) {
+                headerMenu.addClass('active');
+
+            } else {
+                headerMenu.removeClass('active');
+            }
+        });
+    })(jQuery);
+
 </script>
 </body>
 </html>

@@ -6,6 +6,7 @@ $borderRadius: 25px;
 $shadow: 0 0 10px rgba(#000, .2);
 $primary_color_1: #000000;
 $primary_color_2: #ffffff;
+$border_round: 50%;
 
 // BRAND
 $themeColorOne: #333333; // Обычно самый темный цвет. Используется для:
@@ -16,6 +17,8 @@ $themeColorTwo: #78024b; // Основной "брендовый" цвет.
 
 $themeColorThree: #a55b89; // для градиента
 $nav_bg_color:  linear-gradient(to right, rgba(184,55,139,1) 0%, rgba(120,2,75,1) 100%);
+$button_bg_color: linear-gradient(to bottom, rgba(190,145,181,1) 0%, rgba(148,2,94,1) 100%);
+$button_bg_hover: linear-gradient(to bottom, rgba(190,145,181,1) 0%, #bb7ba4 100%);
 
 // SELECTION: цвет фона и текста при выделении его курсором
 $selectionBgColor: $themeColorTwo;

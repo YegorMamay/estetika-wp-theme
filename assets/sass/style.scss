@@ -108,6 +108,12 @@ body {
     min-height: 100%;
 }
 
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    padding-top: 80px;
+  }
+}
+
 b,
 strong {
     font-weight: bold;
@@ -178,6 +184,6 @@ img {
 
 @media screen and (min-width: 1200px) {
     .container {
-        max-width: 1680px;
+        max-width: 1300px;
     }
 }
