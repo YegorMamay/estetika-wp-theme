@@ -2,8 +2,10 @@
   padding: 10px 0 0 0;
   background-color: $headerBgColor;
   color: $headerFontColor;
-  //box-shadow: $shadow;
   margin-bottom: 15px;
+  position: relative;
+  z-index: 1000;
+  transition: transform .3s ease-in-out;
   &.active {
     background-color: $primary_color_2;
     position: fixed;
@@ -11,6 +13,12 @@
     left: 0;
     width: 100%;
     z-index: 1000;
+  }
+  &.active {
+    top: -153px;
+    transform: translateY(153px) translateZ(0);
+    transition: transform .6s ease-in-out;
+    transition-delay: 50ms;
   }
 
   &__item {

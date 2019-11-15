@@ -187,3 +187,31 @@ img {
         max-width: 1300px;
     }
 }
+
+.btn {
+  &-secondary {
+    border: none;
+    border-radius: $borderRadius;
+    background: $button_bg_color;
+    color: $primary_color_2;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    &.front-news-link {
+      padding: 8px 18px;
+      font-size: 12px;
+    }
+    &:hover, &:focus {
+      background: $button_bg_hover;
+      color: $primary_color_2;
+    }
+  }
+}
+
+//временно
+@media screen and (min-width: 1024px) {
+  .vc_custom_1573731957000 {
+    margin-top: - 175px;
+    min-height: 760px!important;
+  }
+}

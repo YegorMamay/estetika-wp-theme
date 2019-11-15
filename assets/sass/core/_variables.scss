@@ -65,7 +65,7 @@ $menu-close-color: #fff;
 $menuContainerMobilePaddingTop: 30%;
 
 // FOOTER
-$footerBgColor: $themeColorTwo;
+$footerBgColor: linear-gradient(to right, rgba(205,172,191,1) 0%, rgba(192,148,181,1) 100%);
 $footerFontColor: #fff;
 $footerLinkColorActive: darken($footerFontColor, 5%);
 

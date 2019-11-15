@@ -3,17 +3,19 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: $footerBgColor;
+    background: $footerBgColor;
+}
+
+.footer-bottom {
+    background: $themeColorTwo;
 }
 
 .pre-footer {
     padding: 20px 0;
-    //background-color: lighten($footerBgColor, 15%);
-    background-image: url(/wp-content/themes/estetika-wp-theme/assets/img/footer-bg.jpg);
 }
 
 .copyright {
-    padding: 14px 0;
+    padding: 10px 0;
     color: $footerFontColor;
     display: flex;
     justify-content: space-between;
@@ -24,6 +26,17 @@
 
         &:hover {
             color: $footerLinkColorActive;
+        }
+    }
+}
+
+.developer {
+    & a {
+        color: $primary_color_2;
+        font-size: 14px;
+        text-decoration: none;
+        &:hover, &:focus {
+            color: darken($primary_color_2, 10%);
         }
     }
 }

@@ -11798,6 +11798,12 @@ hr.style-two {
   background-color: transparent;
   color: #fff;
   margin-bottom: 15px;
+  position: relative;
+  z-index: 1000;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
 .page-header.active {
@@ -11807,6 +11813,18 @@ hr.style-two {
   left: 0;
   width: 100%;
   z-index: 1000;
+}
+
+.page-header.active {
+  top: -153px;
+  -webkit-transform: translateY(153px) translateZ(0);
+  transform: translateY(153px) translateZ(0);
+  -webkit-transition: -webkit-transform .6s ease-in-out;
+  transition: -webkit-transform .6s ease-in-out;
+  transition: transform .6s ease-in-out;
+  transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
+  -webkit-transition-delay: 50ms;
+  transition-delay: 50ms;
 }
 
 .page-header__item {
@@ -12737,16 +12755,20 @@ hr.style-two {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #78024b;
+  background: -webkit-gradient(linear, left top, right top, from(#cdacbf), to(#c094b5));
+  background: linear-gradient(to right, #cdacbf 0%, #c094b5 100%);
+}
+
+.footer-bottom {
+  background: #78024b;
 }
 
 .pre-footer {
   padding: 20px 0;
-  background-image: url(/wp-content/themes/estetika-wp-theme/assets/img/footer-bg.jpg);
 }
 
 .copyright {
-  padding: 14px 0;
+  padding: 10px 0;
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12763,6 +12785,16 @@ hr.style-two {
 
 .copyright a:hover {
   color: #f2f2f2;
+}
+
+.developer a {
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.developer a:hover, .developer a:focus {
+  color: #e6e6e6;
 }
 
 .phone-dropdown__item {
@@ -12960,5 +12992,34 @@ img {
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1300px;
+  }
+}
+
+.btn-secondary {
+  border: none;
+  border-radius: 25px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#be91b5), to(#94025e));
+  background: linear-gradient(to bottom, #be91b5 0%, #94025e 100%);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.btn-secondary.front-news-link {
+  padding: 8px 18px;
+  font-size: 12px;
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  background: -webkit-gradient(linear, left top, left bottom, from(#be91b5), to(#bb7ba4));
+  background: linear-gradient(to bottom, #be91b5 0%, #bb7ba4 100%);
+  color: #ffffff;
+}
+
+@media screen and (min-width: 1024px) {
+  .vc_custom_1573731957000 {
+    margin-top: -175px;
+    min-height: 760px !important;
   }
 }

@@ -8,12 +8,13 @@
             </div>
         </div><!-- .pre-footer end-->
     <?php endif; ?>
-
-    <div class="container">
-        <div class="copyright">
-            <div class="date">&copy; <?php echo date('Y'); ?>. Все права защищены</div>
-            <div class="developer">
-                <?php _e('Developed by ', 'brainworks') ?><a href="https://brainworks.pro/" target="_blank">BRAIN WORKS</a>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="copyright">
+                <div class="date">&copy; <?php echo date('Y'); ?>. Все права защищены</div>
+                <div class="developer">
+                    <?php _e('Developed by ', 'brainworks') ?><a href="https://brainworks.pro/" target="_blank">BRAIN WORKS</a>
+                </div>
             </div>
         </div>
     </div>
@@ -47,7 +48,7 @@
         $(document).scroll(function () {
 
             var headerMenu = $('.js-menu-fixed'),
-                windowHeight = $(window).height() / 2;
+                windowHeight = $(window).height() / 2.2;
 
             if ($(this).scrollTop() > windowHeight && $(window).width() >= 1025) {
                 headerMenu.addClass('active');
