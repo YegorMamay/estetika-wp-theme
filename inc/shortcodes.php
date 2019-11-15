@@ -354,13 +354,13 @@ if (!function_exists('bw_advert_shortcode')) {
                     get_the_post_thumbnail(null, 'medium', ['class' => $basic_class . '-thumbnail'])
                 ) : '';
 
-                $headline = sprintf('<h3 class="%s-headline"><a href="%s">%s</a></h3>',
+                $headline = sprintf('<span class="%s-headline"><a href="%s">%s</a></span>',
                     $basic_class, get_the_permalink(), get_the_title()
                 );
 
                 $excerpt = sprintf('<div class="%s-excerpt">%s</div>', $basic_class, get_the_excerpt());
 
-                $btn = sprintf('<div class="text-right"><a class="btn btn-secondary btn-sm %s-link" href="%s">%s</a></div>',
+                $btn = sprintf('<div class="text-left"><a class="btn btn-secondary btn-sm %s-link" href="%s">%s</a></div>',
                     $basic_class, get_the_permalink(), __('Continue reading', 'brainworks')
                 );
 
@@ -369,7 +369,7 @@ if (!function_exists('bw_advert_shortcode')) {
                 );
 
                 $item = sprintf('<section id="post-%s" class="%s">%s</section>', get_the_ID(),
-                    join(' ', get_post_class(['col-md-4', $basic_class . '-item'])),
+                    join(' ', get_post_class(['col-md-12 col-lg-4', $basic_class . '-item'])),
                     $box
                 );
 
@@ -571,7 +571,8 @@ if (!function_exists('bw_reviews_shortcode')) {
                 $post_class = 'class="' . join(' ', get_post_class('review-item', null)) . '"';
 
                 $output .= '<div id="post-' . get_the_ID() . '" ' . $post_class . '>';
-
+                $output .= '<div class="review-wrapper">';
+                $output .= '<div class="review-section">';
                 $output .= '<div class="review-client">';
                 $output .= get_the_post_thumbnail(null, 'thumbnail', array('class' => 'review-avatar'));
                 if (count($social)) {
@@ -581,8 +582,9 @@ if (!function_exists('bw_reviews_shortcode')) {
                 }
                 $output .= '</div>';
                 $output .= '<div class="review-title text-bold">' . get_the_title() . '</div>';
+                $output .= '</div>';
                 $output .= '<div class="review-content">' . get_the_content() . '</div>';
-
+                $output .= '</div>';
                 $output .= '</div>';
             }
 

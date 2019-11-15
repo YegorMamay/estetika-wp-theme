@@ -5,7 +5,7 @@
   margin-bottom: 15px;
   position: relative;
   z-index: 1000;
-  transition: transform .3s ease-in-out;
+  transition: transform .2s ease-in-out;
   &.active {
     background-color: $primary_color_2;
     position: fixed;
@@ -13,6 +13,16 @@
     left: 0;
     width: 100%;
     z-index: 1000;
+    & .logo-img {
+      width: 110px;
+      display: block;
+      margin: 0 auto;
+    }
+    & .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
   &.active {
     top: -153px;

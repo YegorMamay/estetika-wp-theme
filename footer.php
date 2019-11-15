@@ -45,16 +45,20 @@
     })(jQuery);
 
     (function ($) {
+
+        var headerMenu = $('.js-menu-fixed');
+        var headerMenuHeight = headerMenu.outerHeight();
+        var customHeight = 500;
+
         $(document).scroll(function () {
 
-            var headerMenu = $('.js-menu-fixed'),
-                windowHeight = $(window).height() / 2.2;
-
-            if ($(this).scrollTop() > windowHeight && $(window).width() >= 1025) {
+            if ($(this).scrollTop() > customHeight && $(window).width() >= 1025) {
                 headerMenu.addClass('active');
+                $('body').css({'padding-top': headerMenuHeight});
 
             } else {
                 headerMenu.removeClass('active');
+                $('body').css({'padding-top': 0});
             }
         });
     })(jQuery);

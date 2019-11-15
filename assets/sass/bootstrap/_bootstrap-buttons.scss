@@ -40,8 +40,8 @@ $btn-padding-x-sm: 20px !default;
 $btn-font-size-sm: ($btn-font-size * .875) !default;
 $btn-line-height-sm: 1.5 !default;
 
-$btn-padding-y-lg: 10px !default;
-$btn-padding-x-lg: 60px !default;
+$btn-padding-y-lg: 16px !default;
+$btn-padding-x-lg: 55px !default;
 $btn-font-size-lg: ($btn-font-size * 1.25) !default;
 $btn-line-height-lg: 1.5 !default;
 
@@ -81,6 +81,7 @@ $btn-link-hover-decoration: underline !default;
     padding: $btn-padding-y $btn-padding-x;
     font-size: $btn-font-size;
     line-height: $btn-line-height;
+    box-shadow: $button_shadow;
     @if $btn-enable-rounded {
         border-radius: $btn-border-radius;
     } @else {
@@ -174,7 +175,7 @@ fieldset:disabled a.btn {
         &:not(:disabled):not(.disabled):active,
         &:not(:disabled):not(.disabled).active {
             color: color-yiq($active-background);
-            background-color: $active-background;
+            background: $button_bg_hover;
             @if $btn-enable-gradients {
                 background-image: none;
             }
@@ -312,7 +313,7 @@ fieldset:disabled a.btn {
     }
 
     .btn-lg {
-        padding: 9px 55px;
+        padding: 18px 50px;
         font-size: 18px;
     }
 }
@@ -329,7 +330,7 @@ fieldset:disabled a.btn {
     }
 
     .btn-lg {
-        padding: 8px 50px;
+        padding: 16px 45px;
         font-size: 16px;
     }
 }
@@ -346,7 +347,48 @@ fieldset:disabled a.btn {
     }
 
     .btn-lg {
-        padding: 7px 40px;
+        padding: 12px 40px;
         font-size: 14px;
+    }
+}
+
+.btn-primary {
+    border: none;
+    background: $button_bg_color;
+    color: $primary_color_2;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    &:hover, &:focus, &:active {
+        background: $button_bg_hover;
+        color: $primary_color_2;
+    }
+}
+
+.btn-simple {
+    border: none;
+    background: $button_bg_simple_color;
+    color: $themeColorTwo;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    &:hover, &:focus, &:active {
+        background: $button_bg_hover;
+        color: $primary_color_2;
+    }
+}
+
+.btn-arrow {
+    position: relative;
+    &__round {
+        border-radius: $border_round;
+        width: 23px;
+        height: 23px;
+        display: inline-block;
+        background: url("assets/img/svg/arrow-right-slider.svg") no-repeat;
+        position: absolute;
+        right: 20px;
+        transform: translateY(-50%);
+        top: 50%;
     }
 }
