@@ -39,6 +39,42 @@
         </div>
     </div>
 
+    <!-- класс js-item-slider событие слайдера -->
+    <div class="row js-item-slider">
+        <div class="col-md-3">
+            <div class="slider-item">
+                <div class="slider-item__image-wrapper">
+                    <img class="slider-item__image" src="/wp-content/themes/estetika-wp-theme/assets/img/item.jpg" alt="image">
+                </div>
+                <div class="slider-item__title">Крем "Данне"</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="slider-item">
+                <div class="slider-item__image-wrapper">
+                    <img class="slider-item__image" src="/wp-content/themes/estetika-wp-theme/assets/img/item.jpg" alt="image">
+                </div>
+                <div class="slider-item__title">Крем "Данне"</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="slider-item">
+                <div class="slider-item__image-wrapper">
+                    <img class="slider-item__image" src="/wp-content/themes/estetika-wp-theme/assets/img/item.jpg" alt="image">
+                </div>
+                <div class="slider-item__title">Крем "Данне"</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="slider-item">
+                <div class="slider-item__image-wrapper">
+                    <img class="slider-item__image" src="/wp-content/themes/estetika-wp-theme/assets/img/item.jpg" alt="image">
+                </div>
+                <div class="slider-item__title">Крем "Данне"</div>
+            </div>
+        </div>
+    </div>
+
 <!--    <div class="row">-->
 <!--        <div class="col-12 col-sm-6 col-md-4 col-lg-3">-->
 <!--            активный класс для блока active -->
