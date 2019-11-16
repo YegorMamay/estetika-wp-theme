@@ -375,6 +375,15 @@ fieldset:disabled a.btn {
     &:hover, &:focus, &:active {
         background: $button_bg_hover;
         color: $primary_color_2;
+        border: none;
+        box-shadow: none;
+    }
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+        background: $button_bg_hover;
+        color: $primary_color_2;
+        border: none;
+        box-shadow: none;
     }
 }
 

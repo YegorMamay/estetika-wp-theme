@@ -9101,6 +9101,18 @@ fieldset:disabled a.btn {
   background: -webkit-gradient(linear, left top, left bottom, from(#be91b5), to(#bb7ba4));
   background: linear-gradient(to bottom, #be91b5 0%, #bb7ba4 100%);
   color: #ffffff;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-simple:not(:disabled):not(.disabled):active, .btn-simple:not(:disabled):not(.disabled).active {
+  background: -webkit-gradient(linear, left top, left bottom, from(#be91b5), to(#bb7ba4));
+  background: linear-gradient(to bottom, #be91b5 0%, #bb7ba4 100%);
+  color: #ffffff;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .btn-arrow {
