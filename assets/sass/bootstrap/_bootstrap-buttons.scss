@@ -392,3 +392,11 @@ fieldset:disabled a.btn {
         top: 50%;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .btn-arrow {
+        &__round {
+            right: 10px;
+        }
+    }
+}
