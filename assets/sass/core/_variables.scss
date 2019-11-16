@@ -7,6 +7,7 @@ $shadow: 0 0 10px rgba(#000, .2);
 $primary_color_1: #000000;
 $primary_color_2: #ffffff;
 $border_round: 50%;
+$border_radius_sm: 12px;
 
 // BRAND
 $themeColorOne: #333333; // Обычно самый темный цвет. Используется для:
@@ -22,6 +23,7 @@ $button_bg_simple_color: linear-gradient(45deg, rgba(240,230,216,1) 0%, rgba(226
 $button_bg_hover: linear-gradient(to bottom, rgba(190,145,181,1) 0%, #bb7ba4 100%);
 $news_bg_color: linear-gradient(to bottom, rgba(250,250,250,1) 0%, rgba(255,255,255,1) 100%);
 $button_shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+$high_shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.25);
 $custom_color: #F2EBE2;
 
 // SELECTION: цвет фона и текста при выделении его курсором

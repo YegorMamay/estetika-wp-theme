@@ -79,6 +79,15 @@
     }
 }
 
+@media screen and (max-width: 575px) {
+    .copyright {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
 .developer {
     & a {
         color: $primary_color_2;

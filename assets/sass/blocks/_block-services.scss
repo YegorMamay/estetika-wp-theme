@@ -1,11 +1,12 @@
 .block-services {
   background: $primary_color_2;
+  box-shadow: $shadow;
   border-radius: 12px;
   display: flex;
   align-items: center;
   width: 100%;
   max-width: 320px;
-  min-height: 90px;
+  min-height: 100px;
   margin: 0 auto 15px;
   padding: 10px 12px;
 
@@ -19,6 +20,13 @@
     & .block-services__dots {
       background: $primary_color_2;
     }
+
+    &:hover {
+      & .block-services__description {
+        color: $primary_color_2;
+      }
+
+    }
   }
 
   &:hover {
@@ -27,7 +35,6 @@
     }
 
   }
-
 
   &__dots {
     width: 8px;
