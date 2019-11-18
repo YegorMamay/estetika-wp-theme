@@ -116,6 +116,11 @@ body {
   .wrapper {
     padding-top: 80px;
   }
+  .home {
+    & .wrapper {
+      padding-top: 65px;
+    }
+  }
 }
 
 b,
@@ -209,13 +214,5 @@ img {
       background: $button_bg_hover;
       color: $primary_color_2;
     }
-  }
-}
-
-//временно
-@media screen and (min-width: 1024px) {
-  .vc_custom_1573731957000 {
-    margin-top: - 175px;
-    min-height: 760px!important;
   }
 }

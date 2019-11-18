@@ -363,6 +363,9 @@ fieldset:disabled a.btn {
         background: $button_bg_hover;
         color: $primary_color_2;
     }
+    &:hover, &:focus {
+        box-shadow: none;
+    }
 }
 
 .btn-simple {

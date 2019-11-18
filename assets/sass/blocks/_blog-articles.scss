@@ -31,6 +31,9 @@
 
 .front-news-link {
   box-shadow: $shadow;
+  &:hover {
+    box-shadow: none!important;
+  }
 }
 
 .front-news-preview {

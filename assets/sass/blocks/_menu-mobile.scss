@@ -487,3 +487,19 @@
         }
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .nav {
+        &.hide-on-desktop {
+            & .sub-menu {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                & .sub-menu-item {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
