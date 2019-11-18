@@ -133,15 +133,20 @@
         top: 200%;
         left: 0;
         z-index: 33;
-        width: 250px;
+        width: 500px;
         background-color: $menuBgColorActive;
         visibility: hidden;
         text-align: left;
         opacity: 0;
         box-shadow: 0 5px 20px rgba(#000, .2);
         @extend %smooth_animation;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
 
         &-item {
+            width: 50%;
+            text-align: left;
             .menu-item-has-children-arrow {
                 display: none;
             }

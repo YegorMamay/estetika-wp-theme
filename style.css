@@ -12212,13 +12212,26 @@ hr.style-two {
   top: 200%;
   left: 0;
   z-index: 33;
-  width: 250px;
+  width: 500px;
   background-color: #fff;
   visibility: hidden;
   text-align: left;
   opacity: 0;
   -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.nav .sub-menu-item {
+  width: 50%;
+  text-align: left;
 }
 
 .nav .sub-menu-item .menu-item-has-children-arrow {
@@ -12802,9 +12815,7 @@ hr.style-two {
 
 @media screen and (max-width: 1024px) {
   .nav.hide-on-desktop .sub-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
@@ -12815,7 +12826,8 @@ hr.style-two {
     flex-wrap: wrap;
   }
   .nav.hide-on-desktop .sub-menu .sub-menu-item {
-    width: 50%;
+    width: calc(50% - 5px);
+    display: inline-block;
   }
 }
 
@@ -13362,6 +13374,53 @@ hr.style-two {
   padding: 0 10px;
   margin-top: 16px;
   text-align: center;
+}
+
+.benefits-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.benefits-item__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0 15px;
+  width: 25%;
+  margin-bottom: 15px;
+}
+
+.benefits-item__title {
+  margin-top: 15px;
+  text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  .benefits-item__wrapper {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .benefits-item__wrapper {
+    width: 100%;
+  }
 }
 
 ::-moz-selection {

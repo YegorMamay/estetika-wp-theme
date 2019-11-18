@@ -492,12 +492,13 @@
     .nav {
         &.hide-on-desktop {
             & .sub-menu {
-                display: flex;
+                display: none;
                 align-items: flex-start;
                 justify-content: flex-start;
                 flex-wrap: wrap;
                 & .sub-menu-item {
-                    width: 50%;
+                    width: calc(50% - 5px);
+                    display: inline-block;
                 }
             }
         }
