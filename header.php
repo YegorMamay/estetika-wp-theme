@@ -11,14 +11,7 @@
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:locale:alternate" content="ru_RU" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="<?php
-        if ( is_front_page() ) {
-	       echo bloginfo('name');
-        }
-        else {
-	       echo single_post_title();
-        }
-    ?>" />
+    <meta property="og:title" content="<?php if ( is_front_page() ) {echo bloginfo('name');} else { echo single_post_title(); } ?>" />
     <meta property="og:description" content="<?php bloginfo('description'); ?>">
     <meta property="og:url" content="<?php echo esc_url(site_url()); ?>" />
     <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
@@ -46,14 +39,11 @@
                 <div class="row page-header__wrapper">
                     <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                         <div class="page-header__item-wrapper">
-                            <?php
-                            $address = get_theme_mod('bw_additional_address');
-                            if (!empty($address)) { ?>
+                            
                                 <div class="page-header__item">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <span class="page-header__description"><?php echo esc_html($address); ?></span>
+                                    <span class="page-header__description"><?php pll_e('Address') ?></span>
                                 </div>
-                            <?php } ?>
 
                             <?php
                             $work_schedule = get_theme_mod('bw_additional_work_schedule');

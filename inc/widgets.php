@@ -37,7 +37,7 @@ function bw_widgets_init()
         'description' => __('The footer widget area', 'brainworks'),
         'before_widget' => '<div class="widget-item %1$s %2$s col-sm-4 text-center">',
         'after_widget' => '</div>',
-        'before_title' => '<div class="widget-title">',
+        'before_title' => '<div class="widget-title bold">',
         'after_title' => '</div>',
     ));
 
