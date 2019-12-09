@@ -109,7 +109,7 @@
                                 <?php } ?>
                                 <!-- Dropdown phones -->
                                 <button type="button" class="button-request <?php the_lang_class('js-call-back'); ?>">
-                                    <?php _e('Обратный звонок', 'brainworks'); ?>
+                                    <?php _e('Call back', 'brainworks'); ?>
                                 </button>
                             </div>
                         </div>
