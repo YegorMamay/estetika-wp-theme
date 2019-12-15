@@ -9,6 +9,11 @@
   min-height: 100px;
   margin: 0 auto;
   padding: 10px 12px;
+    
+    //xs 544
+    @media #{$mobile} {
+        min-height: 50px;
+    }
 
   &:hover {
     box-shadow: none;
